@@ -1,0 +1,23 @@
+{
+  "name": "web3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Aryan Ahadinia <62179268+AryanAhadinia@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^2.2.33",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "run": "node index.js",
+    "dev": "nodemon index.js"
+  }
+}
