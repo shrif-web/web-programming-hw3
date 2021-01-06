@@ -162,8 +162,10 @@ body {
     width: 300px;
     height: 100%;
     right: 0px;
+    align-content: center;
     background-color: #e99480;
     position: fixed;
+    padding-top: 20px;
 }
 
 .side-bar h1 {
@@ -174,13 +176,32 @@ body {
     text-align: right;
 }
 
-.side-bar ul li {
+.side-bar div span label a{
     font-family: "Shabnam", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 130%;
-    margin-bottom: 10px;
     text-align: right;
+    color: rgba(0, 0, 0, 0.73);
 }
+
+.side-bar div span ion-icon{
+    font-family: "Shabnam", sans-serif;
+    font-weight: 900;
+    font-size: 160%;
+    text-align: right;
+    margin: auto 12px;
+    margin-bottom: -4px;
+}
+
+.side-bar div span {
+    float: right;
+    padding: 0.2rem 2rem;
+    width: 100%;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.63);
+
+}
+
 .screen-section {
     display: flex;
     float: right;
