@@ -37,6 +37,7 @@ body {
   list-style: none;
   margin-left: 2%;
 }
+
 .header-right li {
   display: inline-flex;
   margin: auto 2rem;
@@ -165,7 +166,6 @@ body {
   align-content: center;
   background-color: #e99480;
   position: fixed;
-  padding-top: 20px;
 }
 
 .side-bar h1 {
@@ -195,11 +195,21 @@ body {
 
 .side-bar div span {
   float: right;
-  padding: 0.2rem 2rem;
+  padding: 1.3rem 2rem 0.4rem 2rem;
   width: 100%;
   text-align: right;
+  background-color: rgba(94, 35, 35, 0.327);
   color: rgba(0, 0, 0, 0.63);
 }
+
+side-bar div :hover{
+    float: right;
+    padding: 0.2rem 2rem;
+    width: 100%;
+    text-align: right;
+    background-color: rgba(94, 35, 35, 0.527);
+    color: rgba(0, 0, 0, 0.63);
+  }
 
 .screen-section {
   display: flex;
