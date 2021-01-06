@@ -212,6 +212,7 @@ body {
     height: fit-content;
     background-color: #5a1e10;
     color: white;
+    margin: 5px;
 }
 
 .card :hover,
