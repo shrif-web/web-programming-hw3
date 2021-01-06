@@ -1,0 +1,24 @@
+@media screen and (max-width: 600px) {
+    .data-section {
+        margin-right: 0%;
+        width: 100%;
+    }
+
+    .data-table {
+        margin-right: 0px;
+    }
+    .data-section .side-bar {
+        visibility: hidden;
+    }
+
+    .footer {
+        visibility: visible;
+    }
+
+    #home-button,
+    #data-button,
+    .header-left,
+    .data-section .side-bar {
+        visibility: hidden;
+    }
+}

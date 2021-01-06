@@ -1,0 +1,23 @@
+@media screen and (max-width: 1000px) {
+    .main-section {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-section {
+        grid-template-columns: auto;
+        margin-right: 0%;
+    }
+
+    .footer {
+        visibility: visible;
+    }
+
+    #home-button,
+    #data-button,
+    .header-left,
+    .side-bar {
+        visibility: hidden;
+    }
+}
