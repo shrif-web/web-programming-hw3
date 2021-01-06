@@ -334,3 +334,15 @@ th {
 .modal {
   z-index: 9999;
 }
+
+#addButton {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 35px;
+  position: sticky;
+  bottom: 10px;
+  left: 10px;
+  background-color: #e17055;
+  border-color: #e17055;
+}
