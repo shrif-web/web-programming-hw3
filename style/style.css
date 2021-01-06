@@ -39,12 +39,17 @@ body {
 }
 .header-right li {
     display: inline-flex;
-    margin: 20px 2rem;
+    margin: auto 2rem;
 }
 
 .header-left li {
+    color: white;
     display: inline-flex;
-    margin: 20px 2rem;
+    font-family: "Shabnam", sans-serif;
+    text-decoration: none;
+    color: white;
+    text-align: middle;
+    margin: auto 1.6rem;
 }
 
 .header ul li a {
