@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/index-responsive.css" />
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="/controller.js"></script>
     <meta charset="UTF-8" />
 </head>
 
@@ -32,18 +33,18 @@
             <div>
                 <span>
                     <ion-icon name="information-circle"></ion-icon>
-                    <label><a href="#">اطلاعات</a>  </label>
+                    <label><a onclick="showInfo()" href="#">اطلاعات</a>  </label>
                 </span>
             </div>
             <div>
                 <span>
                     <ion-icon name="albums"></ion-icon>
-                    <label><a href="#"> پست‌ها </a></label>
+                    <label><a onclick="showPersonalPosts()" href="#"> پست‌ها </a></label>
                 </span>
             </div>
         </div>
         <div class="main-section">
-            <div class="row">
+            <div id="posts" class="row">
                 <div class="col-sm-4" >
                     <div class="card">
                         <div class="card-body">
@@ -102,7 +103,7 @@
         </div>
         
         <!--info-->
-        <div class="container" style="display: none;">
+        <div class="container" id="info" style="display: none;">
             <div class="row">
               <div class="col-md-16 order-md-1">
 
