@@ -1,0 +1,110 @@
+body {
+    font-family: 'Shabnam', sans-serif;
+    direction: rtl;
+    background-color: #E99480;
+}
+
+#homeButton {
+    font-size: 100%;
+    width: 130px;
+    background-color: transparent;
+    border: none;
+    margin-top: 70px;
+}
+
+a {
+    color: #4c190d;
+}
+
+a:hover {
+    color: #9c4734;
+}
+
+table {
+    background-color: #E17055;
+    border-radius: 40px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+#signup {
+    width: calc(80vw - 350px);
+    object-fit: cover;
+}
+
+.form-control {
+    width: 300px;
+}
+
+button {
+    width: 300px;
+}
+
+#imgContainer {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 0px;
+}
+
+th,
+td {
+    padding: 25px;
+}
+
+#imgCell {
+    padding: 0px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5vw;
+    font-weight: 900;
+}
+
+#styleDiv {
+    width: 300px;
+    margin: auto;
+}
+
+.nav>.nav-item>.active {
+    background-color: #4c190d;
+}
+
+.btn {
+    background-color: #4c190d;
+    border: #4c190d;
+}
+
+.btn:hover {
+    background-color: #6e2b1c;
+}
+
+@media screen and (max-width: 600px) {
+    #imgContainer {
+        display: none;
+    }
+
+    #table {
+        width: 90vw;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    #signup {
+        width: 650px;
+    }
+}
