@@ -36,7 +36,7 @@ function signup() {
                     alert(JSON.parse(http.responseText)['message']);
                 } else {
                     getPersonalPosts()
-                    window.location.pathname = '/dashboard.html'
+                    window.location.pathname = '/index.html'
                 }
             }
         }
@@ -70,6 +70,17 @@ function signin() {
     }
 }
 
+function signout() {
+    let cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        let eqPos = cookie.indexOf("=");
+        let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+    window.location.pathname = '/index.html'
+}
+
 let posts;
 
 function getPersonalPosts() {
@@ -89,17 +100,17 @@ function getPersonalPosts() {
     }
 }
 
-function getThisUserPosts(){
-  for (var post of posts){
-      addPost(post.title,post.content)
-  }
+function getThisUserPosts() {
+    for (var post of posts) {
+        addPost(post.title, post.content)
+    }
 }
 
 
-function addPost(title, content){
-  let postsPart = document.getElementById("postsSection")
-  postsPart.innerHTML +=
-   `<div class="col-sm-4" >
+function addPost(title, content) {
+    let postsPart = document.getElementById("postsSection")
+    postsPart.innerHTML +=
+        `<div class="col-sm-4" >
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
@@ -111,10 +122,10 @@ function addPost(title, content){
     </div>`
 }
 
-function addHomePost(title, content){
-  let postsPart = document.getElementById("homePostsSection")
-  postsPart.innerHTML +=
-   `<div class="col-sm-4" >
+function addHomePost(title, content) {
+    let postsPart = document.getElementById("homePostsSection")
+    postsPart.innerHTML +=
+        `<div class="col-sm-4" >
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
@@ -127,32 +138,32 @@ function addHomePost(title, content){
 }
 
 function getHomePosts() {
-  let http = new XMLHttpRequest();
-  let url = 'api/post';
-  http.open('GET', url, true);
-  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  http.onreadystatechange = function () {
-      if (http.readyState == 4) {
-          if (http.status != 200) {
-              alert(JSON.parse(http.responseText)['message']);
-          } else {
-              posts = JSON.parse(http.responseText)['posts'];
-              for (var post of posts){
-                addHomePost(post.title,post.content)
+    let http = new XMLHttpRequest();
+    let url = 'api/post';
+    http.open('GET', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.onreadystatechange = function () {
+        if (http.readyState == 4) {
+            if (http.status != 200) {
+                alert(JSON.parse(http.responseText)['message']);
+            } else {
+                posts = JSON.parse(http.responseText)['posts'];
+                for (var post of posts) {
+                    addHomePost(post.title, post.content)
+                }
             }
-          }
-      }
-  }
+        }
+    }
 }
 
 
 
 
-function editPost(){
+function editPost() {
     let http = new XMLHttpRequest();
     let url = '/api/admin/post/crud/:id';
     let request = {
-        'post' : {
+        'post': {
             "title": document.getElementById("recipient-name").value,
             "content": document.getElementById("message-text").value
         }
