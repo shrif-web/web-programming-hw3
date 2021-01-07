@@ -70,6 +70,8 @@ function signin() {
     }
 }
 
+let posts;
+
 function getPersonalPosts() {
     let http = new XMLHttpRequest();
     let url = 'api/admin/post/crud';
@@ -80,7 +82,7 @@ function getPersonalPosts() {
             if (http.status != 200) {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
-                let posts = JSON.parse(http.responseText)['posts'];
+                posts = JSON.parse(http.responseText)['posts'];
 
             }
         }
@@ -88,7 +90,6 @@ function getPersonalPosts() {
 }
 
 function getThisUserPosts(){
-  let postsPart = document.getElementById("posts")
   for (var post of posts){
       addPost(post.title,post.content)
   }
