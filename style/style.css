@@ -3,9 +3,11 @@ body {
   direction: rtl;
   margin: 0px;
   background-color: #f3c5ba;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
 }
+
+
 
 .header {
   display: flex;
