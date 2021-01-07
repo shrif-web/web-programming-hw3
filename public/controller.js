@@ -69,4 +69,21 @@ function signin() {
         }
     }
 }
+
+
+function getPersonalPosts() {
+  let http = new XMLHttpRequest();
+  let url = 'api/admin/post/crud';
+  http.open('GET', url, true);
+  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  http.onreadystatechange = function () {
+      if (http.readyState == 4) {
+          if (http.status != 201) {
+              alert(JSON.parse(http.responseText)['message']);
+          } else {
+              window.location.pathname = '/dashboard.html'
+          }
+      }
+  }
+}
                                 
