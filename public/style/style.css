@@ -354,7 +354,7 @@ th {
   width: 60px;
   height: 60px;
   font-size: 35px;
-  position: sticky;
+  position: fixed;
   bottom: 10px;
   left: 10px;
   background-color: #e17055;
