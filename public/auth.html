@@ -18,6 +18,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="./controller.js"></script>
+    <link rel="stylesheet" href="./style/auth.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
 </head>
@@ -25,7 +26,7 @@
 <body id="body">
     <header>
         <img src="media/logo.png" alt="WebDev Logo">
-        <button id="homeButton" class="float-right" type="menu"><a href="/index.html">بازگشت به خانه ></a></button>
+        <button id="homeButton" class="float-right" type="menu"><a href="./index.html">بازگشت به خانه ></a></button>
     </header>
     <table>
         <tbody>
@@ -79,7 +80,7 @@
                                         <input id="pass-signin" type="password" class="form-control"
                                             placeholder="گذرواژه">
                                     </div>
-                                    <button onclick="signin()" type="submit" class="btn btn-primary">ورود</button>
+                                    <button id="signin" onclick="signin()" type="submit" class="btn btn-primary">ورود</button>
                                 </form>
                             </div>
                         </div>
