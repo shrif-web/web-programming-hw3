@@ -36,7 +36,7 @@ function signup() {
                     alert(JSON.parse(http.responseText)['message']);
                 } else {
                     getPersonalPosts()
-                    window.location.pathname = '/index.html'
+                    window.location.pathname = './index.html'
                 }
             }
         }
