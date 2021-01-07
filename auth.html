@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ورود / ثبت نام</title>
+    <link rel="shortcut icon" type="image/png" href=media/favicon.png>
+
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css"
+        integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
+    <link href='https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/style/auth-responsive.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <img src="media/logo.png" alt="WebDev Logo">
+        <button id="homeButton" class="float-right" type="menu"><a href="/index.html">بازگشت به خانه ></a></button>
+    </header>
+
+    <table>
+        <tbody>
+            <tr>
+                <td id="table">
+                    <div id="styleDiv">
+                        <ul class="nav nav-pills nav-justified" id="tabsMenu" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="registerTab" data-toggle="tab" href="#registerBox"
+                                    role="tab" aria-controls="registerBox" aria-selected="true">ثبت نام</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="loginTab" data-toggle="tab" href="#login" role="tab"
+                                    aria-controls="login" aria-selected="false">ورود</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="tabsMenuContent">
+                            <div class="tab-pane fade show active" id="registerBox" role="tabpanel"
+                                aria-labelledby="registerTab">
+                                <form>
+                                    <br>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="پست الکترونیک">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="گذرواژه">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="تکرار گذرواژه">
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="userAggrementCheck">
+                                        <label class="form-check-label" for="userAggrementCheck">
+                                            ضوابط سایت را می پذیرم.
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">ثبت نام</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="loginTab">
+                                <form>
+                                    <br>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="پست الکترونیک">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="گذرواژه">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">ورود</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td id="imgCell">
+                    <div class="container" id="imgContainer">
+                        <picture>
+                            <source media="(min-width: 1000px)" , srcset="media/signup-hd.jpg">
+                            <img id="signup" src="media/signup-sd.jpg" alt="Mind Light" height="400px">
+                        </picture>
+                        <div class="centered">
+                            به روشنی خورشید!!!
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js"
+        integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

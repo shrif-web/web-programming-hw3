@@ -51,7 +51,7 @@
                           <h6 class="card-subtitle mb-2 text-muted">آتیشی گاو است</h6>
                           <p class="card-text">آتیشی موجود عجیبی است . او با اینکه از گه تغذیه می کند ، به باشگاه می رود و معتقد است لایف استایل سالمی دارد . مثل آتیشی باشی.</p>
                           <ion-icon name="trash"></ion-icon>
-                          <ion-icon name="pencil"></ion-icon>
+                          <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
                         </div>
                       </div>
                 </div>
@@ -62,7 +62,7 @@
                           <h6 class="card-subtitle mb-2 text-muted">آتیشی گاو است</h6>
                           <p class="card-text">آتیشی موجود عجیبی است . او با اینکه از گه تغذیه می کند ، به باشگاه می رود و معتقد است لایف استایل سالمی دارد . مثل آتیشی باشید.</p>
                           <ion-icon name="trash"></ion-icon>
-                          <ion-icon name="pencil"></ion-icon>
+                          <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
                         </div>
                       </div>
                 </div>
@@ -73,7 +73,7 @@
                           <h6 class="card-subtitle mb-2 text-muted">آتیشی گاو است</h6>
                           <p class="card-text">آتیشی موجود عجیبی است . او با اینکه از گه تغذیه می کند ، به باشگاه می رود و معتقد است لایف استایل سالمی دارد . مثل آتیشی باشید.</p>
                           <ion-icon name="trash"></ion-icon>
-                          <ion-icon name="pencil"></ion-icon>
+                          <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
                         </div>
                       </div>
               </div>
@@ -84,7 +84,7 @@
                       <h6 class="card-subtitle mb-2 text-muted">آتیشی گاو است</h6>
                       <p class="card-text">آتیشی موجود عجیبی است . او با اینکه از گه تغذیه می کند ، به باشگاه می رود و معتقد است لایف استایل سالمی دارد . مثل آتیشی باشید.</p>
                       <ion-icon name="trash"></ion-icon>
-                      <ion-icon name="pencil"></ion-icon>
+                      <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
                     </div>
                   </div>
              </div>
@@ -95,7 +95,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">آتیشی گاو است</h6>
                     <p class="card-text">آتیشی موجود عجیبی است . او با اینکه از گه تغذیه می کند ، به باشگاه می رود و معتقد است لایف استایل سالمی دارد . مثل آتیشی باشید.</p>
                     <ion-icon name="trash"></ion-icon>
-                    <ion-icon name="pencil"></ion-icon>
+                    <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
                     </div>
                 </div>
           </div>
@@ -105,12 +105,40 @@
 
     <button id="addButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPost" >+</button>
     
-    <!--modal-->
+    <!--add modal-->
     <div class="modal fade" id="addPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">پست جدید</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">تیتر</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">متن</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                    <button type="button" class="btn btn-primary">ذخیره</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--edit modal-->
+    <div class="modal fade" id="editPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ویرایش پست</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
