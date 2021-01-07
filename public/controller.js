@@ -2,15 +2,14 @@ function showInfo() {
     document.getElementById("posts").style.display = "none";
     document.getElementById("addButton").style.display = "none";
     document.getElementById("info").style.display = "inline-block";
-  }
+}
 
-  function showPersonalPosts() {
+function showPersonalPosts() {
     document.getElementById("info").style.display = "none";
     document.getElementById("posts").style.display = "inline-block";
     document.getElementById("addButton").style.display = "inline-block";
-  }
+}
 
-  
 function signup() {
     let details = {
         "email": document.getElementById("email-signup").value,
@@ -43,7 +42,6 @@ function signup() {
     }
 }
 
-
 function signin() {
     let details = {
         "email": document.getElementById("email-signin").value,
@@ -70,20 +68,18 @@ function signin() {
     }
 }
 
-
 function getPersonalPosts() {
-  let http = new XMLHttpRequest();
-  let url = 'api/admin/post/crud';
-  http.open('GET', url, true);
-  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  http.onreadystatechange = function () {
-      if (http.readyState == 4) {
-          if (http.status != 201) {
-              alert(JSON.parse(http.responseText)['message']);
-          } else {
-              window.location.pathname = '/dashboard.html'
-          }
-      }
-  }
+    let http = new XMLHttpRequest();
+    let url = 'api/admin/post/crud';
+    http.open('GET', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.onreadystatechange = function () {
+        if (http.readyState == 4) {
+            if (http.status != 200) {
+                alert(JSON.parse(http.responseText)['message']);
+            } else {
+                let posts = JSON.parse(http.responseText)['posts'];
+            }
+        }
+    }
 }
-                                
