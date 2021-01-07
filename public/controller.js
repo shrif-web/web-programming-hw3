@@ -35,7 +35,8 @@ function signup() {
                 if (http.status != 201) {
                     alert(JSON.parse(http.responseText)['message']);
                 } else {
-                    window.location.pathname = '/index.html'
+                    getPersonalPosts()
+                    window.location.pathname = '/dashboard.html'
                 }
             }
         }
@@ -62,7 +63,8 @@ function signin() {
             if (http.status != 201) {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
-                window.location.pathname = '/index.html'
+                getPersonalPosts()
+                window.location.pathname = '/dashboard.html'
             }
         }
     }
