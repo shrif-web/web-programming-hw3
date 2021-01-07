@@ -1,0 +1,12 @@
+header img {
+    margin: 10px 30px;
+}
+
+#homeButton {
+    margin: 45px 30px;
+}
+
+#homeButton a {
+    color: black;
+    font-weight: 400;
+}
