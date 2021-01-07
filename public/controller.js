@@ -58,13 +58,17 @@ function signin() {
     http.open('POST', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.send(params);
+    alert(2);
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
+            alert('ready')
             if (http.status != 201) {
+                alert('here1')
                 alert(JSON.parse(http.responseText)['message']);
             } else {
-                getPersonalPosts()
-                window.location.pathname = '/dashboard.html'
+                alert('here3')
+                getPersonalPosts();
+                window.location.pathname = '/dashboard.html';
             }
         }
     }
