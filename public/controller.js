@@ -82,6 +82,7 @@ function signout() {
 }
 
 let posts;
+let allPosts;
 
 function getPersonalPosts() {
     let http = new XMLHttpRequest();
@@ -147,8 +148,8 @@ function getHomePosts() {
             if (http.status != 200) {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
-                posts = JSON.parse(http.responseText)['posts'];
-                for (var post of posts) {
+                allPosts = JSON.parse(http.responseText)['posts'];
+                for (var allPosts of posts) {
                     addHomePost(post.title, post.content)
                 }
             }
