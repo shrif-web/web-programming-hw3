@@ -68,6 +68,11 @@ body {
   right: 0;
 }
 
+.notfound .notfound-404 h2:hover{
+  color: #dfcbcb;
+  background: #211b19;
+}
+
 .notfound a {
   font-family: 'Montserrat', sans-serif;
   display: inline-block;
