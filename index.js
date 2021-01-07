@@ -69,7 +69,12 @@ app.post('/api/admin/post/crud',
                         userId = result['id'];
                         db.collection('Posts', function (err, posts) {
                             posts.find({}).sort({ "id": -1 }).limit(1).toArray(function (err, sel) {
-                                const newId = sel[0]['id'] + 1;
+                                let newId;
+                                if (sel.length == 0) {
+                                    newId = 1;
+                                } else {
+                                    newId = sel[0]['id'] + 1;
+                                }
                                 posts.find({}).toArray(function (err, arr) {
                                     posts.insert({ "id": newId, "title": titleSent, "content": contentSent, "created_by": userId, "created_at": new Date().toString() });
                                     res.status(201).json({ "id": newId });
