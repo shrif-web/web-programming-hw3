@@ -79,7 +79,38 @@ function getPersonalPosts() {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
                 let posts = JSON.parse(http.responseText)['posts'];
+
             }
         }
     }
+}
+
+
+function editPost(){
+    let http = new XMLHttpRequest();
+    let url = '/api/admin/post/crud/:id';
+    let request = {
+        'post' : {
+            "title": document.getElementById("recipient-name").value,
+            "content": document.getElementById("message-text").value
+        }
+    };
+    let formBody = [];
+    for (var property in details) {
+        formBody.push(encodeURIComponent(property) + "=" + encodeURIComponent(details[property]));
+    }
+    let params = formBody.join("&");
+    http.open('PUT', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.send(params);
+    http.onreadystatechange = function () {
+        if (http.readyState == 4) {
+            if (http.status != 201) {
+                alert(JSON.parse(http.responseText)['message']);
+            } else {
+                window.location.pathname = '/dashboard.html'
+            }
+        }
+    }
+
 }
