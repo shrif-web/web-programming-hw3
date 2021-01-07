@@ -111,6 +111,40 @@ function addPost(title, content){
     </div>`
 }
 
+function addHomePost(title, content){
+  let postsPart = document.getElementById("homePostsSection")
+  postsPart.innerHTML +=
+   `<div class="col-sm-4" >
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">${title}</h5>
+            <p class="card-text">${content}</p>
+            <ion-icon name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
+            <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
+          </div>
+        </div>
+    </div>`
+}
+
+function getHomePosts() {
+  let http = new XMLHttpRequest();
+  let url = 'api/post';
+  http.open('GET', url, true);
+  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  http.onreadystatechange = function () {
+      if (http.readyState == 4) {
+          if (http.status != 200) {
+              alert(JSON.parse(http.responseText)['message']);
+          } else {
+              posts = JSON.parse(http.responseText)['posts'];
+              for (var post of posts){
+                addHomePost(post.title,post.content)
+            }
+          }
+      }
+  }
+}
+
 
 
 
