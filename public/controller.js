@@ -82,7 +82,7 @@ function signout() {
         let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
-    window.location.pathname = '/index.html'
+    window.location.pathname = './index.html'
 }
 
 function getPersonalPosts() {
@@ -108,8 +108,36 @@ function getThisUserPosts() {
     }
 }
 
+function addPost() {
+    let title = document.getElementById("recipient-name").value;
+    let content = document.getElementById("message-text").value;
+    let details = {
+        "title": title,
+        "content": content
+    };
+    let formBody = [];
+    for (var property in details) {
+        formBody.push(encodeURIComponent(property) + "=" + encodeURIComponent(details[property]));
+    }
+    let http = new XMLHttpRequest();
+    let url = 'api/admin/post/crud';
+    let params = formBody.join("&");
+    http.open('POST', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.send(params);
+    http.onreadystatechange = function () {
+        if (http.readyState == 4) {
+            if (http.status != 201) {
+                alert(JSON.parse(http.responseText)['message']);
+            } else {
+                addPostOnScreen(title,content)
+            }
+        }
+    }
+}
 
-function addPost(title, content) {
+
+function addPostOnScreen(title, content) {
     let postsPart = document.getElementById("postsSection")
     postsPart.innerHTML +=
     `<div class="col-sm-4" >
@@ -117,8 +145,8 @@ function addPost(title, content) {
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
-            <ion-icon onClick="updateCurrentId()" name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
-            <ion-icon onClick="updateCurrentId()" name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
+            <ion-icon onclick="updateCurrentId()" name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
+            <ion-icon onclick="updateCurrentId()" name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
           </div>
         </div>
     </div>`
