@@ -90,6 +90,7 @@ function getPersonalPosts() {
     let url = 'api/admin/post/crud';
     http.open('GET', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.send();
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
             if (http.status != 200) {
@@ -104,7 +105,7 @@ function getPersonalPosts() {
 
 function getThisUserPosts() {
     for (let post of myPosts) {
-        addPost(post.title, post.content)
+        addPostOnScreen(post.title, post.content)
     }
 }
 
@@ -145,8 +146,8 @@ function addPostOnScreen(title, content) {
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
-            <ion-icon onclick="updateCurrentId()" name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
-            <ion-icon onclick="updateCurrentId()" name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
+            <ion-icon onclick="updateCurrentId(this)" name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
+            <ion-icon onclick="updateCurrentId(this)" name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
           </div>
         </div>
     </div>`
@@ -197,6 +198,8 @@ function updateCurrentId(element){
             currentId = i;
         i++;
     }
+
+    console.log(currentId)
 }
 
 
@@ -233,18 +236,14 @@ function editPost() {
 
 function deletePost(){
     let http = new XMLHttpRequest();
-    let url = `/api/admin/post/crud/${currentId}`;
-    let formBody = [];
-    for (var property in details) {
-        formBody.push(encodeURIComponent(property) + "=" + encodeURIComponent(details[property]));
-    }
-    let params = formBody.join("&");
+    let url = `/api/admin/post/crud/${currentId - 1}`;
     http.open('DEL', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    http.send(params);
+    http.send(null);
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
             if (http.status != 201) {
+                console.log(http.responseText);
                 alert(JSON.parse(http.responseText)['message']);
             } else {
                 window.location.pathname = './dashboard.html';

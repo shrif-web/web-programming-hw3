@@ -240,7 +240,7 @@ side-bar div :hover{
 }
 
 .card {
-  width: auto;
+  width: 100%;
   height: fit-content;
   background-color: #5a1e10;
   color: white;
