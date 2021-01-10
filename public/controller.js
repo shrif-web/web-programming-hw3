@@ -1,3 +1,7 @@
+let allPosts=[];
+let myPosts=[];
+let currentId;
+
 function showInfo() {
     document.getElementById("posts").style.display = "none";
     document.getElementById("addButton").style.display = "none";
@@ -64,7 +68,7 @@ function signin() {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
                 getPersonalPosts();
-                window.location.pathname = '/dashboard.html';
+                window.location.pathname = './dashboard.html';
             }
         }
     }
@@ -81,9 +85,6 @@ function signout() {
     window.location.pathname = '/index.html'
 }
 
-let posts;
-let allPosts;
-
 function getPersonalPosts() {
     let http = new XMLHttpRequest();
     let url = 'api/admin/post/crud';
@@ -94,15 +95,15 @@ function getPersonalPosts() {
             if (http.status != 200) {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
-                posts = JSON.parse(http.responseText)['posts'];
-
+                myPosts = JSON.parse(http.responseText)['posts'];
+                getThisUserPosts();
             }
         }
     }
 }
 
 function getThisUserPosts() {
-    for (var post of posts) {
+    for (let post of myPosts) {
         addPost(post.title, post.content)
     }
 }
@@ -111,13 +112,13 @@ function getThisUserPosts() {
 function addPost(title, content) {
     let postsPart = document.getElementById("postsSection")
     postsPart.innerHTML +=
-        `<div class="col-sm-4" >
+    `<div class="col-sm-4" >
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
-            <ion-icon name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
-            <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
+            <ion-icon onClick="updateCurrentId()" name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
+            <ion-icon onClick="updateCurrentId()" name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
           </div>
         </div>
     </div>`
@@ -126,7 +127,7 @@ function addPost(title, content) {
 function addHomePost(title, content) {
     let postsPart = document.getElementById("homePostsSection")
     postsPart.innerHTML +=
-        `<div class="col-sm-4" >
+    `<div class="col-sm-4" >
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
@@ -159,6 +160,18 @@ function getHomePosts() {
 
 
 
+function updateCurrentId(element){
+    post = element.parentNode.parentNode.parentNode;
+    posts = document.getElementById("postsSection").childNodes;
+    let i = 0;
+    for (let p of posts){
+        if(post==p)
+            currentId = i;
+        i++;
+    }
+}
+
+
 
 function editPost() {
     let http = new XMLHttpRequest();
@@ -182,9 +195,45 @@ function editPost() {
             if (http.status != 201) {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
-                window.location.pathname = '/dashboard.html'
+                window.location.pathname = './dashboard.html'
             }
         }
     }
 
+}
+
+
+function deletePost(){
+    let http = new XMLHttpRequest();
+    let url = `/api/admin/post/crud/${currentId}`;
+    let formBody = [];
+    for (var property in details) {
+        formBody.push(encodeURIComponent(property) + "=" + encodeURIComponent(details[property]));
+    }
+    let params = formBody.join("&");
+    http.open('DEL', url, true);
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.send(params);
+    http.onreadystatechange = function () {
+        if (http.readyState == 4) {
+            if (http.status != 201) {
+                alert(JSON.parse(http.responseText)['message']);
+            } else {
+                window.location.pathname = './dashboard.html';
+                deletePostFromScreen();
+            }
+        }
+    }
+}
+
+function deletePostFromScreen(){
+    posts = document.getElementById("postsSection").childNodes;
+    let i = 0;
+    for (let p of posts){
+        if(i=currentId){
+            posts.removeChild(p);
+            return;
+        }
+        i++;
+    }
 }
