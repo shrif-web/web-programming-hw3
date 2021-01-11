@@ -140,17 +140,15 @@ function addPost() {
 
 
 function addPostOnScreen(title, content) {
-    let postsPart = document.getElementById("posts")
+    let postsPart = document.getElementById("posts-section")
     postsPart.innerHTML +=
-    `<div>
-      <div class="card">
+    `<div class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
             <ion-icon onclick="updateCurrentId(this)" name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
             <ion-icon onclick="updateCurrentId(this)" name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
           </div>
-        </div>
     </div>`
 }
 
@@ -191,8 +189,10 @@ function getHomePosts() {
 
 
 function updateCurrentId(element){
-    post = element.parentNode.parentNode;
-    posts = document.getElementById("posts").childNodes;
+    let post = element.parentNode.parentNode;
+    let posts = document.getElementById("posts-section").childNodes;
+    console.log(post)
+    console.log(posts)
     let i = 0;
     for (let p of posts){
         console.log(i);
@@ -202,7 +202,6 @@ function updateCurrentId(element){
         }
         i++;
     }
-
     console.log(currentId)
 }
 
@@ -256,7 +255,7 @@ function deletePost(){
 }
 
 function deletePostFromScreen(){
-    posts = document.getElementById("postsSection").childNodes;
+    posts = document.getElementById("posts-section").childNodes;
     let i = 0;
     for (let p of posts){
         if(i=currentId){
