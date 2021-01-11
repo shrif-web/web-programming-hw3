@@ -257,7 +257,7 @@ function deletePost() {
     http.send(null);
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
-            if (http.status != 201) {
+            if (http.status != 204) {
                 console.log(http.responseText);
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
