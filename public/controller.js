@@ -240,10 +240,11 @@ function editPost() {
     http.send(params);
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
-            if (http.status != 201) {
+            if (http.status != 204) {
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
                 window.location.pathname = "./dashboard.html";
+                window.location.reload();
             }
         }
     };
