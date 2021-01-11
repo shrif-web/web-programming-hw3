@@ -10,7 +10,7 @@ function showInfo() {
 
 function showPersonalPosts() {
     document.getElementById("info").style.display = "none";
-    document.getElementById("posts").style.display = "inline-block";
+    document.getElementById("posts-section").style.display = "inline-block";
     document.getElementById("addButton").style.display = "inline-block";
 }
 
