@@ -119,7 +119,7 @@ function getThisUserPosts() {
     let postsPart = document.getElementById("posts-section");
     postsPart.innerHTML = "";
     for (let post of myPosts) {
-        addPostOnScreen(post.title, post.content);
+        addPostOnScreen(post.title, post.content, post.id);
     }
 }
 
@@ -149,15 +149,15 @@ function addPost() {
             if (http.status != 201) {
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
-                addPostOnScreen(title, content);
+                addPostOnScreen(title, content, JSON.parse(http.responseText)["id"]);
             }
         }
     };
 }
 
-function addPostOnScreen(title, content) {
+function addPostOnScreen(title, content, id) {
     let postsPart = document.getElementById("posts-section");
-    postsPart.innerHTML += `<div class="card">
+    postsPart.innerHTML += `<div cardId="${id}" class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
