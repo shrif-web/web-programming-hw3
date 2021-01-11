@@ -223,7 +223,7 @@ function getHomePosts() {
 }
 
 function updateCurrentId(element) {
-    let post = element.parentNode.parentNode;
+    let post = element.parentNode.parentNode.parentNode;
     currentId = post.getAttribute("card-id");
 }
 
