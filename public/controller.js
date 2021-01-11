@@ -178,8 +178,10 @@ function addPostOnScreen(title, content, id) {
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
+            <span>
             <ion-icon onclick="updateCurrentId(this)" name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
             <ion-icon onclick="updateCurrentId(this)" name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
+            </span>
           </div>
     </div>`;
 }
