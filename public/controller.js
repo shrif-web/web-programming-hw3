@@ -157,7 +157,7 @@ function addPost() {
 
 function addPostOnScreen(title, content, id) {
     let postsPart = document.getElementById("posts-section");
-    postsPart.innerHTML += `<div cardId="${id}" class="card">
+    postsPart.innerHTML += `<div card-id="${id}" class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
@@ -203,18 +203,7 @@ function getHomePosts() {
 
 function updateCurrentId(element) {
     let post = element.parentNode.parentNode;
-    let posts = document.getElementById("posts-section").childNodes;
-    console.log(post);
-    console.log(posts);
-    let i = 0;
-    for (let p of posts) {
-        console.log(i);
-        if (post == p) {
-            currentId = myPosts[i - 1].id;
-            return;
-        }
-        i++;
-    }
+    currentId = post.getAttribute("card-id");
     console.log(currentId);
 }
 
