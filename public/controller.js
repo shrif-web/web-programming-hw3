@@ -14,7 +14,12 @@ function showInfo() {
 
 function showPersonalPosts() {
     document.getElementById("info-section").style.display = "none";
-    document.getElementById("posts-section").style.display = "inline-block";
+    document.getElementById("posts-section").style.display = "grid";
+
+    for (post of document.getElementById("posts-section").childNodes) {
+        post.style.width = "100%";
+        post.style.height = "100%";
+    }
     document.getElementById("addButton").style.display = "inline-block";
     document.getElementById("info-button").style.backgroundColor =
         "transparent";
@@ -183,14 +188,14 @@ function addHomePost(title, content) {
     let postsPart = document.getElementById("homePostsSection");
     let mainSection = postsPart.parentNode;
     mainSection.style.marginRight = "0";
-    postsPart.innerHTML += `<div class="col-sm-4" >
+    postsPart.innerHTML += `
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
           </div>
         </div>
-    </div>`;
+`;
 }
 
 function getHomePosts() {
