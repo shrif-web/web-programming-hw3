@@ -60,8 +60,8 @@ function signup() {
                 if (http.status != 201) {
                     alert(JSON.parse(http.responseText)["message"]);
                 } else {
-                    getPersonalPosts();
                     window.location.pathname = "./index.html";
+                    getPersonalPosts();
                 }
             }
         };
