@@ -44,6 +44,12 @@ function authenticateToken(req, res, next) {
             return res.sendStatus(401);
         }
         req.user = user;
+        // if you want to renew token each time. uncommnet block below.
+        /*
+        const userObject = { "email": user.email, "expiry": +(new Date()) + TOKEN_EXPIRY };
+        const accessToken = jwt.sign(userObject, process.env.ACCESS_TOKEN_SECRET);
+        res.cookie("token", accessToken);
+        */
         next();
     });
 }
@@ -118,7 +124,7 @@ app.put('/api/admin/post/crud/:id/',
             db.collection('Users', function (err, users) {
                 users.findOne({ "email": reqEmail }, function (err, result) {
                     if (err) {
-                        res.status(401).json({"message": "permission denied"});
+                        res.status(401).json({ "message": "permission denied" });
                     } else {
                         userId = result['id'];
                         db.collection('Posts', function (err, posts) {
@@ -156,7 +162,7 @@ app.delete('/api/admin/post/crud/:id/',
             db.collection('Users', function (err, users) {
                 users.findOne({ "email": reqEmail }, function (err, result) {
                     if (err) {
-                        res.status(401).json({"message": "permission denied"});
+                        res.status(401).json({ "message": "permission denied" });
                     } else {
                         userId = result['id'];
                         db.collection('Posts', function (err, posts) {
@@ -187,11 +193,11 @@ app.get('/api/admin/post/crud',
             db.collection('Users', function (err, users) {
                 users.findOne({ "email": reqEmail }, function (err, result) {
                     if (err) {
-                        res.status(401).json({"message": "permission denied"});
+                        res.status(401).json({ "message": "permission denied" });
                     } else {
                         userId = result['id'];
                         db.collection('Posts', function (err, posts) {
-                            posts.find({ "created_by": userId }).project({"_id": 0}).toArray(function (err, result) {
+                            posts.find({ "created_by": userId }).project({ "_id": 0 }).toArray(function (err, result) {
                                 res.status(200).json({ "posts": result });
                             });
                         });
@@ -215,15 +221,15 @@ app.get('/api/admin/post/crud/:id/',
             db.collection('Users', function (err, users) {
                 users.findOne({ "email": reqEmail }, function (err, result) {
                     if (err) {
-                        res.status(401).json({"message": "permission denied."});
+                        res.status(401).json({ "message": "permission denied." });
                     } else {
                         let userId = result['id'];
                         db.collection('Posts', function (err, posts) {
                             posts.findOne({ "id": postId }, function (err, awn) {
                                 if (awn == null) {
-                                    res.status(404).json({"message": "Not Found"});
+                                    res.status(404).json({ "message": "Not Found" });
                                 } else if (awn['created_by'] != userId) {
-                                    res.status(401).json({"message": "permission denied"});
+                                    res.status(401).json({ "message": "permission denied" });
                                 } else {
                                     delete awn['_id']
                                     res.status(200).json({ "post": awn });
