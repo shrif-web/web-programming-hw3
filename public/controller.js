@@ -1,7 +1,7 @@
 let allPosts = [];
 let myPosts = [];
 let currentId;
-let email;
+var user_email;
 
 function showInfo() {
     document.getElementById("posts-section").style.display = "none";
@@ -93,8 +93,9 @@ function signin() {
             if (http.status != 201) {
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
-                email = details["email"];
-                window.location.pathname = "./dashboard.html";
+                //user_email = details["email"];
+                localStorage.setItem("user_email", details["email"]);
+                window.location.pathname = "./dashboard.html";      
                 getPersonalPosts();
             }
         }
@@ -113,7 +114,7 @@ function signout() {
 }
 
 function getPersonalPosts() {
-    document.getElementById("user-email").placeholder = email;
+    document.getElementById("user-email").placeholder = window.localStorage.getItem("user_email");
     let http = new XMLHttpRequest();
     let url = "api/admin/post/crud";
     http.open("GET", url, true);
