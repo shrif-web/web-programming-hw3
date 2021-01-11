@@ -371,3 +371,7 @@ th {
 #postsSection {
     width: 100%;
 }
+
+.modal .modal-dialog .modal-content .modal-footer .btn-primary{
+  background-color: #721c24;
+}
