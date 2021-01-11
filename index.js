@@ -82,7 +82,7 @@ app.post(
                     function (err, result) {
                         if (err) {
                             res.sendStatus(401);
-                            // db.close();
+                            db.close();
                         } else {
                             userId = result["id"];
                             db.collection("Posts", function (err, posts) {
