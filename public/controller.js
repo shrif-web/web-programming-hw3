@@ -1,6 +1,7 @@
 let allPosts = [];
 let myPosts = [];
 let currentId;
+let email;
 
 function showInfo() {
     document.getElementById("posts-section").style.display = "none";
@@ -92,8 +93,9 @@ function signin() {
             if (http.status != 201) {
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
-                getPersonalPosts();
+                email = details["email"];
                 window.location.pathname = "./dashboard.html";
+                getPersonalPosts();
             }
         }
     };
@@ -111,6 +113,7 @@ function signout() {
 }
 
 function getPersonalPosts() {
+    document.getElementById("user-email").placeholder = email;
     let http = new XMLHttpRequest();
     let url = "api/admin/post/crud";
     http.open("GET", url, true);
