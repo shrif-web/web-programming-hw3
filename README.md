@@ -2,7 +2,8 @@
 Web Programming coure, HW03.
 
 ## Files
-Back-end
+Server implementation is in index.js. Fornt-end files are in package public.
+
 
 ## How to deploy
 1. Clone repository.
