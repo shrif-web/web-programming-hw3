@@ -1,7 +1,7 @@
 #body {
-    font-family: 'Shabnam', sans-serif;
+    font-family: "Shabnam", sans-serif;
     direction: rtl;
-    background-color: #E99480;
+    background-color: #e99480;
 }
 
 #homeButton {
@@ -21,9 +21,10 @@ a:hover {
 }
 
 table {
-    background-color: #E17055;
+    background-color: #e17055;
     border-radius: 40px;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
 
     position: absolute;
@@ -80,7 +81,7 @@ td {
     margin: auto;
 }
 
-.nav>.nav-item>.active {
+.nav > .nav-item > .active {
     background-color: #4c190d;
 }
 

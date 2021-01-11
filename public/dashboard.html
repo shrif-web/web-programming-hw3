@@ -1,161 +1,306 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>داشبورد</title>
+        <link rel="shortcut icon" type="image/png" href=./media/favicon.png />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="./style/style.css" />
+        <link rel="stylesheet" href="./style/index-responsive.css" />
+        <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+        <script src="./controller.js"></script>
+    </head>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <title>داشبورد</title>
-    <link rel="shortcut icon" type="image/png" href=./media/favicon.png />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="./style/index-responsive.css" />
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-    <script src="./controller.js"></script>
-</head>
-
-<body  onload="getPersonalPosts()" >
-    <header>
-        <div class="header">
-            <ul class="header-right">
-                <img class="logo" src="./media/logo-white-text.png" />
-                <li class="nav-item" id="home-button"><a
-                        style="background-color: brown; padding: 10px; border-radius: 5px;" href="./index.html">خانه</a>
-                </li>
-            </ul>
-            <ul class="header-left">
-                <li><a style="padding: 10px; border-radius: 5px;" onclick="signout()" id="profile" href="#">خروج</a>
-                </li>
-            </ul>
-        </div>
-    </header>
-    <div class="screen-section">
-        <div class="side-bar">
-            <div>
-                <span>
-                    <ion-icon name="information-circle"></ion-icon>
-                    <label><a onclick="showInfo()" href="#">اطلاعات</a> </label>
-                </span>
+    <body onload="getPersonalPosts()">
+        <header>
+            <div class="header">
+                <ul class="header-right">
+                    <img class="logo" src="./media/logo-white-text.png" />
+                    <li class="nav-item" id="home-button">
+                        <a
+                            style="
+                                background-color: brown;
+                                padding: 10px;
+                                border-radius: 5px;
+                            "
+                            href="./index.html"
+                            >خانه</a
+                        >
+                    </li>
+                </ul>
+                <ul class="header-left">
+                    <li>
+                        <a
+                            style="padding: 10px; border-radius: 5px"
+                            onclick="signout()"
+                            id="profile"
+                            href="#"
+                            >خروج</a
+                        >
+                    </li>
+                </ul>
             </div>
-            <div>
-                <span>
-                    <ion-icon name="albums"></ion-icon>
-                    <label><a onclick="getPersonalPosts()" href="#"> پست‌ها </a></label>
-                </span>
+        </header>
+        <div class="screen-section">
+            <div class="side-bar">
+                <div>
+                    <span>
+                        <ion-icon name="information-circle"></ion-icon>
+                        <label
+                            ><a onclick="showInfo()" href="#">اطلاعات</a>
+                        </label>
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        <ion-icon name="albums"></ion-icon>
+                        <label
+                            ><a onclick="getPersonalPosts()" href="#">
+                                پست‌ها
+                            </a></label
+                        >
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="main-section row" id="posts-section">
-            
-        </div>
+            <div class="main-section row" id="posts-section"></div>
 
-        <!--info-->
-        <div class="main-section" id="info" style="display: none;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-16 order-md-1">
-
-                        <form class="needs-validation" novalidate="">
-                            <div class="mb-3">
-                                <label for="email" style="float: right;">ایمیل <span class="text-muted"></span></label>
-                                <input type="email" class="form-control" id="email" placeholder="you@example.com"
-                                    readonly>
-                                <div class="invalid-feedback">
-                                    Please enter a valid email address for shipping updates.
+            <!--info-->
+            <div class="main-section" id="info" style="display: none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-16 order-md-1">
+                            <form class="needs-validation" novalidate="">
+                                <div class="mb-3">
+                                    <label for="email" style="float: right"
+                                        >ایمیل <span class="text-muted"></span
+                                    ></label>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="you@example.com"
+                                        readonly
+                                    />
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for
+                                        shipping updates.
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <button id="addButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPost">+</button>
+        <button
+            id="addButton"
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#addPost"
+        >
+            +
+        </button>
 
-    <!--add modal-->
-    <div class="modal fade" id="addPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">پست جدید</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">تیتر</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">متن</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
-                    <button type="button" class="btn btn-primary" onclick="addPost()">ذخیره</button>
+        <!--add modal-->
+        <div
+            class="modal fade"
+            id="addPost"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            پست جدید
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label
+                                    for="recipient-name"
+                                    class="col-form-label"
+                                    >تیتر</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="recipient-name"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label"
+                                    >متن</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="message-text"
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            بستن
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="addPost()"
+                        >
+                            ذخیره
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--edit modal-->
-    <div class="modal fade" id="editPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">ویرایش پست</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">تیتر</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">متن</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
-                    <button type="button" class="btn btn-primary" onclick="editPost()">ذخیره</button>
+        <!--edit modal-->
+        <div
+            class="modal fade"
+            id="editPost"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            ویرایش پست
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label
+                                    for="recipient-name"
+                                    class="col-form-label"
+                                    >تیتر</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="recipient-name"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label"
+                                    >متن</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="message-text"
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            بستن
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="editPost()"
+                        >
+                            ذخیره
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--delete modal -->
-    <div class="modal fade" id="deletePost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">حذف پست</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    آیا از حذف مطمئنید ؟؟
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
-                    <button type="button" class="btn btn-primary" onclick="deletePost()">حذف</button>
+        <!--delete modal -->
+        <div
+            class="modal fade"
+            id="deletePost"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            حذف پست
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">آیا از حذف مطمئنید ؟؟</div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            بستن
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="deletePost()"
+                        >
+                            حذف
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-</body>
-
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
