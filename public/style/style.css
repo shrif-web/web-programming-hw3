@@ -1,373 +1,373 @@
 body {
-  font-family: "Shabnam", sans-serif;
-  direction: rtl;
-  margin: 0px;
-  background-color: #f3c5ba;
-  width: 100%;
-  height: fit-content;
+    font-family: "Shabnam", sans-serif;
+    direction: rtl;
+    margin: 0px;
+    background-color: #f3c5ba;
+    width: 100%;
+    height: fit-content;
 }
 
 .header {
-  display: flex;
-  flex: 1;
-  right: 0px;
-  top: 0px;
-  justify-content: space-between;
-  margin: 0px auto;
-  background-color: #e17055;
-  height: 100px;
-  width: 100%;
-  font-size: 120%;
-  z-index: 9998;
-  position: fixed;
-  padding: 20px 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex: 1;
+    right: 0px;
+    top: 0px;
+    justify-content: space-between;
+    margin: 0px auto;
+    background-color: #e17055;
+    height: 100px;
+    width: 100%;
+    font-size: 120%;
+    z-index: 9998;
+    position: fixed;
+    padding: 20px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .header-right {
-  display: flex;
-  float: right;
-  list-style: none;
-  margin-right: 2%;
+    display: flex;
+    float: right;
+    list-style: none;
+    margin-right: 2%;
 }
 
 .header-left {
-  display: flex;
-  float: left;
-  list-style: none;
-  margin-left: 2%;
+    display: flex;
+    float: left;
+    list-style: none;
+    margin-left: 2%;
 }
 
 .header-right li {
-  display: inline-flex;
-  margin: auto 2rem;
+    display: inline-flex;
+    margin: auto 2rem;
 }
 
 .header-left li {
-  color: white;
-  display: inline-flex;
-  font-family: "Shabnam", sans-serif;
-  text-decoration: none;
-  color: white;
-  text-align: middle;
-  margin: auto 1.6rem;
+    color: white;
+    display: inline-flex;
+    font-family: "Shabnam", sans-serif;
+    text-decoration: none;
+    color: white;
+    text-align: middle;
+    margin: auto 1.6rem;
 }
 
 .header ul li a {
-  font-family: "Shabnam", sans-serif;
-  text-decoration: none;
-  color: white;
-  text-align: middle;
-  margin: auto;
+    font-family: "Shabnam", sans-serif;
+    text-decoration: none;
+    color: white;
+    text-align: middle;
+    margin: auto;
 }
 
 .header ul li a:link,
 .header ul li a:visited {
-  border-bottom: 2px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 .header ul li a:hover,
 .header ul li a:active {
-  color: #5a1e10;
-  border-bottom: 2px solid white;
-  transition: background-color 0.4s;
+    color: #5a1e10;
+    border-bottom: 2px solid white;
+    transition: background-color 0.4s;
 }
 
 .footer {
-  visibility: hidden;
-  display: flex;
-  flex: 1;
-  right: 0px;
-  bottom: 0px;
-  justify-content: space-between;
-  margin: 0px auto;
-  background-color: #e17055;
-  height: 100px;
-  width: 100%;
-  font-size: 120%;
-  z-index: 9998;
-  position: fixed;
-  padding: 20px 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    display: flex;
+    flex: 1;
+    right: 0px;
+    bottom: 0px;
+    justify-content: space-between;
+    margin: 0px auto;
+    background-color: #e17055;
+    height: 100px;
+    width: 100%;
+    font-size: 120%;
+    z-index: 9998;
+    position: fixed;
+    padding: 20px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .footer-items {
-  display: flex;
-  flex: 1;
-  float: center;
-  justify-content: space-between;
-  list-style: none;
-  margin-right: 2%;
+    display: flex;
+    flex: 1;
+    float: center;
+    justify-content: space-between;
+    list-style: none;
+    margin-right: 2%;
 }
 
 .footer-items li {
-  display: inline-flex;
-  margin: 20px auto;
-  transform: translateY(-18%);
+    display: inline-flex;
+    margin: 20px auto;
+    transform: translateY(-18%);
 }
 
 .footer ul li a {
-  font-family: "Shabnam", sans-serif;
-  text-decoration: none;
-  color: white;
-  text-align: middle;
-  margin: auto;
+    font-family: "Shabnam", sans-serif;
+    text-decoration: none;
+    color: white;
+    text-align: middle;
+    margin: auto;
 }
 
 .footer ul li a:link,
 .footer ul li a:visited {
-  border-bottom: 2px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 .footer ul li a:hover,
 .footer ul li a:active {
-  color: #5a1e10;
-  border-bottom: 2px solid white;
-  transition: background-color 0.4s;
+    color: #5a1e10;
+    border-bottom: 2px solid white;
+    transition: background-color 0.4s;
 }
 
 .logo {
-  height: 80px;
-  width: auto;
-  float: right;
-  margin-top: 0;
-  margin-right: -20px;
-  transform: translateY(-18%);
+    height: 80px;
+    width: auto;
+    float: right;
+    margin-top: 0;
+    margin-right: -20px;
+    transform: translateY(-18%);
 }
 
 .input-group-btn {
-  float: left;
-  font-family: "Shabnam", sans-serif;
-  height: 100%;
-  color: white;
-  background-color: #4c190d;
+    float: left;
+    font-family: "Shabnam", sans-serif;
+    height: 100%;
+    color: white;
+    background-color: #4c190d;
 }
 
 .search-item {
-  display: flex;
+    display: flex;
 }
 
 .form-control {
-  font-family: "Shabnam", sans-serif;
-  font-size: 80%;
-  opacity: 60%;
-  padding: 0 10px;
-  background-color: rgb(50, 50, 50);
-  color: white;
+    font-family: "Shabnam", sans-serif;
+    font-size: 80%;
+    opacity: 60%;
+    padding: 0 10px;
+    background-color: rgb(50, 50, 50);
+    color: white;
 }
 
 /* SIDE BAR */
 
 .side-bar {
-  display: inline-block;
-  width: 300px;
-  height: 100%;
-  right: 0px;
-  align-content: center;
-  background-color: #e99480;
-  position: fixed;
+    display: inline-block;
+    width: 300px;
+    height: 100%;
+    right: 0px;
+    align-content: center;
+    background-color: #e99480;
+    position: fixed;
 }
 
 .side-bar h1 {
-  font-family: "Shabnam", sans-serif;
-  font-weight: bolder;
-  padding: 50px 50px 0px 50px;
-  margin-bottom: 30px;
-  text-align: right;
+    font-family: "Shabnam", sans-serif;
+    font-weight: bolder;
+    padding: 50px 50px 0px 50px;
+    margin-bottom: 30px;
+    text-align: right;
 }
 
 .side-bar div span label a {
-  font-family: "Shabnam", sans-serif;
-  font-weight: 700;
-  font-size: 130%;
-  text-align: right;
-  color: rgba(0, 0, 0, 0.73);
+    font-family: "Shabnam", sans-serif;
+    font-weight: 700;
+    font-size: 130%;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.73);
 }
 
 .side-bar div span ion-icon {
-  font-family: "Shabnam", sans-serif;
-  font-weight: 900;
-  font-size: 160%;
-  text-align: right;
-  margin: auto 12px;
-  margin-bottom: -4px;
+    font-family: "Shabnam", sans-serif;
+    font-weight: 900;
+    font-size: 160%;
+    text-align: right;
+    margin: auto 12px;
+    margin-bottom: -4px;
 }
 
 .side-bar div span {
-  float: right;
-  padding: 1.3rem 2rem 0.4rem 2rem;
-  width: 100%;
-  text-align: right;
-  background-color: rgba(94, 35, 35, 0.327);
-  color: rgba(0, 0, 0, 0.63);
+    float: right;
+    padding: 1.3rem 2rem 0.4rem 2rem;
+    width: 100%;
+    text-align: right;
+    background-color: rgba(94, 35, 35, 0.327);
+    color: rgba(0, 0, 0, 0.63);
 }
 
 side-bar div :hover {
-  float: right;
-  padding: 0.2rem 2rem;
-  width: 100%;
-  text-align: right;
-  background-color: rgba(94, 35, 35, 0.527);
-  color: rgba(0, 0, 0, 0.63);
+    float: right;
+    padding: 0.2rem 2rem;
+    width: 100%;
+    text-align: right;
+    background-color: rgba(94, 35, 35, 0.527);
+    color: rgba(0, 0, 0, 0.63);
 }
 
 .screen-section {
-  display: flex;
-  float: right;
-  height: 100%;
-  width: 100%;
-  margin: 100px 0;
-  grid-gap: 0.5rem;
+    display: flex;
+    float: right;
+    height: 100%;
+    width: 100%;
+    margin: 100px 0;
+    grid-gap: 0.5rem;
 }
 
 .main-section {
-  display: grid;
-  justify-content: right;
-  padding: 50px;
-  grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
-  grid-auto-rows: minmax(min-content, max-content);
-  row-gap: 1rem;
-  column-gap: 3.333333%;
-  height: 100%;
-  width: 100%;
-  flex-grow: 1;
-  overflow: hidden;
-  background-color: #f3c5ba;
-  margin: 0;
-  margin-right: 300px;
+    display: grid;
+    justify-content: right;
+    padding: 50px;
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    grid-auto-rows: minmax(min-content, max-content);
+    row-gap: 1rem;
+    column-gap: 3.333333%;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: #f3c5ba;
+    margin: 0;
+    margin-right: 300px;
 }
 
 .card {
-  width: 100%;
-  height: 100%;
-  background-color: #5a1e10;
-  color: white;
-  margin: 5px;
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #5a1e10;
+    color: white;
+    margin: 5px;
+    width: 100%;
+    height: 100%;
 }
 
 .card .card-body span {
-  position: absolute;
-  justify-content: left;
-  width: fit-content;
-  left: 8%;
-  bottom: 2%;
+    position: absolute;
+    justify-content: left;
+    width: fit-content;
+    left: 8%;
+    bottom: 2%;
 }
 
 .card :hover,
 .card :active {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
-  transition: box-shadow 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    transition: box-shadow 0.3s;
 }
 
 .card :visited,
 .card :link {
-  box-shadow: 0 4px 8px 0 transparent, 0 6px 20px 0 transparent;
-  transition: box-shadow 0.3s;
+    box-shadow: 0 4px 8px 0 transparent, 0 6px 20px 0 transparent;
+    transition: box-shadow 0.3s;
 }
 
 .data-section {
-  display: flex;
-  float: left;
-  flex-grow: 1;
-  justify-content: left;
-  flex: 1;
-  height: 100%;
-  width: 100%;
-  padding-top: 100px;
-  row-gap: 2rem;
-  align-items: flex-start;
+    display: flex;
+    float: left;
+    flex-grow: 1;
+    justify-content: left;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 2rem;
+    align-items: flex-start;
 }
 
 .data-table {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 90%;
-  grid-auto-rows: minmax(min-content, max-content);
-  row-gap: 0rem;
-  padding: 100px;
-  width: 100%;
-  height: 100%;
-  margin-right: 300px;
-  overflow: hidden;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 90%;
+    grid-auto-rows: minmax(min-content, max-content);
+    row-gap: 0rem;
+    padding: 100px;
+    width: 100%;
+    height: 100%;
+    margin-right: 300px;
+    overflow: hidden;
 }
 
 table,
 th,
 td {
-  border: 3px solid #4c190d;
-  border-collapse: collapse;
-  width: 100%;
-  margin: 0px;
-  color: white;
+    border: 3px solid #4c190d;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0px;
+    color: white;
 }
 
 td,
 tr,
 th {
-  padding: 15px 30px;
-  text-align: center;
-  font-weight: 900;
-  color: black;
+    padding: 15px 30px;
+    text-align: center;
+    font-weight: 900;
+    color: black;
 }
 
 table tr:nth-child(even) {
-  background-color: rgb(223, 128, 128);
+    background-color: rgb(223, 128, 128);
 }
 
 table tr:nth-child(odd) {
-  background-color: rgb(221, 160, 160);
+    background-color: rgb(221, 160, 160);
 }
 
 th {
-  overflow: hidden;
-  white-space: nowrap;
-  background-color: #5a1e10;
-  color: white;
-  font-size: 130%;
-  font-weight: 900;
-  padding: 20px auto;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #5a1e10;
+    color: white;
+    font-size: 130%;
+    font-weight: 900;
+    padding: 20px auto;
 }
 
 .buttons-section {
-  display: flex;
-  margin-top: 0px;
-  padding-top: 10px;
-  width: 100%;
-  height: auto;
-  justify-content: space-between;
+    display: flex;
+    margin-top: 0px;
+    padding-top: 10px;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
 }
 
 .buttons-section button {
-  padding: 10px 50px;
-  background-color: #5a1e10;
-  border-color: #5a1e10;
+    padding: 10px 50px;
+    background-color: #5a1e10;
+    border-color: #5a1e10;
 }
 
 .buttons-section button :hover,
 .buttons-section button :active {
-  background-color: #e17055;
-  border-color: #e17055;
+    background-color: #e17055;
+    border-color: #e17055;
 }
 
 .modal {
-  z-index: 9999;
-  margin-top: 10%;
+    z-index: 9999;
+    margin-top: 10%;
 }
 
 #addButton {
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 35px;
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  background-color: #e17055;
-  border-color: #e17055;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #e17055;
+    border-color: #e17055;
 }
 
 #postsSection {
-  width: 100%;
+    width: 100%;
 }
