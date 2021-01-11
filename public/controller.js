@@ -191,15 +191,12 @@ function getHomePosts() {
 
 
 function updateCurrentId(element){
-    console.log(myPosts);
     post = element.parentNode.parentNode.parentNode;
     posts = document.getElementById("postsSection").childNodes;
     let i = 0;
     for (let p of posts){
         if(post==p){
-            console.log(i)
-            console.log(myPosts)
-            currentId = myPosts[0].id;
+            currentId = myPosts[i-1].id;
             return;
         }
         i++;
