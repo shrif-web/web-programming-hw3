@@ -409,3 +409,8 @@ app.use(
         });
     }
 );
+
+app.use(function(req, res, next) {
+    res.status(404);
+    res.sendFile(__dirname + '/public/error.html');
+});
