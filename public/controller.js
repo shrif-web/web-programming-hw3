@@ -81,7 +81,6 @@ function signin() {
                 encodeURIComponent(details[property])
         );
     }
-    console.log(details);
     let http = new XMLHttpRequest();
     let url = "api/signin";
     let params = formBody.join("&");
@@ -226,7 +225,6 @@ function getHomePosts() {
 function updateCurrentId(element) {
     let post = element.parentNode.parentNode;
     currentId = post.getAttribute("card-id");
-    console.log(currentId);
 }
 
 function editPost() {
@@ -269,7 +267,6 @@ function deletePost() {
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
             if (http.status != 204) {
-                console.log(http.responseText);
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
                 window.location.pathname = "./dashboard.html";
@@ -283,11 +280,8 @@ function deletePostFromScreen() {
     postsSections = document.getElementById("posts-section");
     posts = document.getElementById("posts-section").childNodes;
     let i = 0;
-    console.log(postsSections);
     for (let p of posts) {
         id = p.getAttribute("card-id");
-        console.log(p);
-        console.log(id);
         if (id == currentId) {
             postsSections.removeChild(posts[i]);
             return;
