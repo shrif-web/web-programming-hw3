@@ -140,9 +140,9 @@ function addPost() {
 
 
 function addPostOnScreen(title, content) {
-    let postsPart = document.getElementById("postsSection")
+    let postsPart = document.getElementById("posts")
     postsPart.innerHTML +=
-    `<div class="col-sm-4" >
+    `<div>
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">${title}</h5>

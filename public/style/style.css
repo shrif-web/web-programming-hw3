@@ -7,8 +7,6 @@ body {
   height: fit-content;
 }
 
-
-
 .header {
   display: flex;
   flex: 1;
@@ -204,14 +202,14 @@ body {
   color: rgba(0, 0, 0, 0.63);
 }
 
-side-bar div :hover{
-    float: right;
-    padding: 0.2rem 2rem;
-    width: 100%;
-    text-align: right;
-    background-color: rgba(94, 35, 35, 0.527);
-    color: rgba(0, 0, 0, 0.63);
-  }
+side-bar div :hover {
+  float: right;
+  padding: 0.2rem 2rem;
+  width: 100%;
+  text-align: right;
+  background-color: rgba(94, 35, 35, 0.527);
+  color: rgba(0, 0, 0, 0.63);
+}
 
 .screen-section {
   display: flex;
@@ -348,7 +346,6 @@ th {
   margin-top: 10%;
 }
 
-
 #addButton {
   border-radius: 50%;
   width: 60px;
@@ -359,4 +356,8 @@ th {
   left: 10px;
   background-color: #e17055;
   border-color: #e17055;
+}
+
+#postsSection {
+  width: 100%;
 }
