@@ -82,7 +82,7 @@ app.post(
                     function (err, result) {
                         if (err) {
                             res.sendStatus(401);
-                            db.close();
+                            // db.close();
                         } else {
                             userId = result["id"];
                             db.collection("Posts", function (err, posts) {
@@ -124,7 +124,7 @@ app.post(
 
 // PUT Update `CT
 app.put(
-    "/api/admin/post/crud/:id/",    
+    "/api/admin/post/crud/:id/",
     authenticateToken,
     body("title").not().isEmpty().withMessage("filed `title` is not valid."),
     body("content")
@@ -175,9 +175,9 @@ app.put(
                                             result,
                                             function (err, u) {
                                                 res.sendStatus(204);
+                                                db.close();
                                             }
                                         );
-                                        db.close();
                                     }
                                 }
                             );
@@ -208,16 +208,19 @@ app.delete("/api/admin/post/crud/:id/", authenticateToken, function (req, res) {
                         posts.findOne({ id: postId }, function (err, result) {
                             if (err) {
                                 res.sendStatus(404);
+                                db.close();
                             } else if (result["created_by"] != userId) {
                                 res.status(401).json({
                                     message: "permission denied.",
                                 });
+                                db.close();
                             } else {
                                 posts.deleteOne(
                                     { id: postId },
                                     result,
                                     function (err, u) {
                                         res.sendStatus(204);
+                                        db.close();
                                     }
                                 );
                             }
@@ -237,6 +240,7 @@ app.get("/api/admin/post/crud", authenticateToken, function (req, res) {
             users.findOne({ email: reqEmail }, function (err, result) {
                 if (err) {
                     res.status(401).json({ message: "permission denied" });
+                    db.close();
                 } else {
                     userId = result["id"];
                     db.collection("Posts", function (err, posts) {
@@ -245,6 +249,7 @@ app.get("/api/admin/post/crud", authenticateToken, function (req, res) {
                             .project({ _id: 0 })
                             .toArray(function (err, result) {
                                 res.status(200).json({ posts: result });
+                                db.close();
                             });
                     });
                 }
@@ -266,6 +271,7 @@ app.get("/api/admin/post/crud/:id/", authenticateToken, function (req, res) {
             users.findOne({ email: reqEmail }, function (err, result) {
                 if (err) {
                     res.status(401).json({ message: "permission denied." });
+                    db.close();
                 } else {
                     let userId = result["id"];
                     db.collection("Posts", function (err, posts) {
@@ -280,6 +286,7 @@ app.get("/api/admin/post/crud/:id/", authenticateToken, function (req, res) {
                                 delete awn["_id"];
                                 res.status(200).json({ post: awn });
                             }
+                            db.close();
                         });
                     });
                 }
@@ -345,6 +352,7 @@ app.get("/api/post", function (req, res) {
                 .project({ _id: 0 })
                 .toArray(function (err, items) {
                     res.status(200).json({ posts: items });
+                    db.close();
                 });
         });
     });
