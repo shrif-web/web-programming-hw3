@@ -1,3 +1,5 @@
+const TOKEN_EXPIRY = 24 * 60 * 60 * 1000
+
 require('dotenv').config();
 
 var express = require('express');
@@ -36,6 +38,9 @@ function authenticateToken(req, res, next) {
     }
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, function (err, user) {
         if (err) {
+            return res.sendStatus(401);
+        }
+        if (user.expiry < +new Date()) {
             return res.sendStatus(401);
         }
         req.user = user;
@@ -300,7 +305,7 @@ app.use('/api/signin',
                     if (items.length == 0 || items[0]['password'] != sha256(passwordSent)) {
                         res.status(401).json({ "message": "wrong email or password." });
                     } else {
-                        const userObject = { "email": emailSent };
+                        const userObject = { "email": emailSent, "expiry": +(new Date()) + TOKEN_EXPIRY };
                         const accessToken = jwt.sign(userObject, process.env.ACCESS_TOKEN_SECRET);
                         res.cookie("token", accessToken);
                         res.status(201).json({ "token": accessToken });
