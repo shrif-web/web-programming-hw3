@@ -105,6 +105,8 @@ function getPersonalPosts() {
 }
 
 function getThisUserPosts() {
+    let postsPart = document.getElementById("posts-section")
+    postsPart.innerHTML="";
     for (let post of myPosts) {
         addPostOnScreen(post.title, post.content)
     }
