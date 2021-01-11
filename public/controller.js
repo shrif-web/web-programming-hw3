@@ -93,7 +93,6 @@ function signin() {
             if (http.status != 201) {
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
-                //user_email = details["email"];
                 localStorage.setItem("user_email", details["email"]);
                 window.location.pathname = "./dashboard.html";      
                 getPersonalPosts();
