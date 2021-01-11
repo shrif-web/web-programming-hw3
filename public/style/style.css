@@ -244,6 +244,7 @@ side-bar div :hover {
     margin: 5px;
     width: 100%;
     height: 100%;
+    text-align: right;
 }
 
 .card h5 {
