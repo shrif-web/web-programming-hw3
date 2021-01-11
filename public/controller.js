@@ -209,16 +209,14 @@ function updateCurrentId(element){
 
 function editPost() {
     let http = new XMLHttpRequest();
-    let url = '/api/admin/post/crud/:id';
+    let url = `api/admin/post/crud/${currentId}`;
     let request = {
-        'post': {
-            "title": document.getElementById("recipient-name").value,
-            "content": document.getElementById("message-text").value
-        }
+        "title": document.getElementById("recipient-name").value,
+         "content": document.getElementById("message-text").value
     };
     let formBody = [];
-    for (var property in details) {
-        formBody.push(encodeURIComponent(property) + "=" + encodeURIComponent(details[property]));
+    for (var property in request) {
+        formBody.push(encodeURIComponent(property) + "=" + encodeURIComponent(request[property]));
     }
     let params = formBody.join("&");
     http.open('PUT', url, true);
