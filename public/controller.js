@@ -155,7 +155,10 @@ function addPostOnScreen(title, content) {
 }
 
 function addHomePost(title, content) {
+
     let postsPart = document.getElementById("homePostsSection")
+    let mainSection = postsPart.parentNode;
+    mainSection.style.marginRight="0";
     postsPart.innerHTML +=
     `<div class="col-sm-4" >
       <div class="card">
@@ -170,17 +173,19 @@ function addHomePost(title, content) {
 }
 
 function getHomePosts() {
+
     let http = new XMLHttpRequest();
-    let url = 'api/post';
+    let url = 'api/post/';
     http.open('GET', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    http.send(null);
     http.onreadystatechange = function () {
         if (http.readyState == 4) {
             if (http.status != 200) {
                 alert(JSON.parse(http.responseText)['message']);
             } else {
                 allPosts = JSON.parse(http.responseText)['posts'];
-                for (var allPosts of posts) {
+                for (var post of allPosts) {
                     addHomePost(post.title, post.content)
                 }
             }
