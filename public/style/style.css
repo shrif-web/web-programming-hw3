@@ -224,14 +224,13 @@ side-bar div :hover {
     display: grid;
     justify-content: right;
     padding: 50px;
-    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    grid-template-columns: 23% 23% 23% 23%;
     grid-auto-rows: minmax(min-content, max-content);
     row-gap: 1rem;
-    column-gap: 3.333333%;
+    column-gap: 2.66666666666%;
     height: 100%;
     width: 100%;
     flex-grow: 1;
-    overflow: hidden;
     background-color: #f3c5ba;
     margin: 0;
     margin-right: 300px;
@@ -245,6 +244,16 @@ side-bar div :hover {
     margin: 5px;
     width: 100%;
     height: 100%;
+    text-align: right;
+}
+
+.card h5 {
+    font-weight: 900;
+    font-size: 180%;
+}
+
+.card p {
+    opacity: 75%;
 }
 
 .card .card-body span {
@@ -257,7 +266,10 @@ side-bar div :hover {
 
 .card :hover,
 .card :active {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.84),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.1),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.172),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 30px 40px rgba(0, 0, 0, 0.22);
     transition: box-shadow 0.3s;
 }
 
@@ -265,6 +277,23 @@ side-bar div :hover {
 .card :link {
     box-shadow: 0 4px 8px 0 transparent, 0 6px 20px 0 transparent;
     transition: box-shadow 0.3s;
+}
+
+.card-body :hover,
+.card-body :active {
+    text-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.84),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.1),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.172),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 30px 40px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 0px 0px 0 transparent, 0 0px 0px 0 transparent;
+    transition: text-shadow 0.3s;
+}
+
+.card-body :visited,
+.card-body :link {
+    text-shadow: 0 0px 0px 0 transparent, 0 0px 0px 0 transparent;
+    box-shadow: 0 0px 0px 0 transparent, 0 0px 0px 0 transparent;
+    transition: text-shadow 0.3s;
 }
 
 .data-section {
@@ -372,6 +401,6 @@ th {
     width: 100%;
 }
 
-.modal .modal-dialog .modal-content .modal-footer .btn-primary{
-  background-color: #721c24;
+.modal .modal-dialog .modal-content .modal-footer .btn-primary {
+    background-color: #721c24;
 }
