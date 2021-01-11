@@ -5,13 +5,21 @@ let currentId;
 function showInfo() {
     document.getElementById("posts-section").style.display = "none";
     document.getElementById("addButton").style.display = "none";
-    document.getElementById("info").style.display = "inline-block";
+    document.getElementById("info-section").style.display = "inline-block";
+    document.getElementById("info-button").style.backgroundColor =
+        "rgba(94, 35, 35, 0.327)";
+    document.getElementById("posts-button").style.backgroundColor =
+        "transparent";
 }
 
 function showPersonalPosts() {
-    document.getElementById("info").style.display = "none";
+    document.getElementById("info-section").style.display = "none";
     document.getElementById("posts-section").style.display = "inline-block";
     document.getElementById("addButton").style.display = "inline-block";
+    document.getElementById("info-button").style.backgroundColor =
+        "transparent";
+    document.getElementById("posts-button").style.backgroundColor =
+        "rgba(94, 35, 35, 0.327)";
 }
 
 function signup() {
@@ -149,7 +157,11 @@ function addPost() {
             if (http.status != 201) {
                 alert(JSON.parse(http.responseText)["message"]);
             } else {
-                addPostOnScreen(title, content, JSON.parse(http.responseText)["id"]);
+                addPostOnScreen(
+                    title,
+                    content,
+                    JSON.parse(http.responseText)["id"]
+                );
             }
         }
     };

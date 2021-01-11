@@ -55,7 +55,10 @@
         <div class="screen-section">
             <div class="side-bar">
                 <div>
-                    <span>
+                    <span
+                        id="info-button"
+                        style="background-color: transparent"
+                    >
                         <ion-icon name="information-circle"></ion-icon>
                         <label
                             ><a onclick="showInfo()" href="#">اطلاعات</a>
@@ -63,10 +66,10 @@
                     </span>
                 </div>
                 <div>
-                    <span>
+                    <span id="posts-button">
                         <ion-icon name="albums"></ion-icon>
                         <label
-                            ><a onclick="getPersonalPosts()" href="#">
+                            ><a onclick="showPersonalPosts()" href="#">
                                 پست‌ها
                             </a></label
                         >
@@ -76,7 +79,7 @@
             <div class="main-section row" id="posts-section"></div>
 
             <!--info-->
-            <div class="main-section" id="info" style="display: none">
+            <div class="main-section" id="info-section" style="display: none">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-16 order-md-1">
