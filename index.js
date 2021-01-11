@@ -82,6 +82,7 @@ app.post(
                     function (err, result) {
                         if (err) {
                             res.sendStatus(401);
+                            db.close();
                         } else {
                             userId = result["id"];
                             db.collection("Posts", function (err, posts) {
@@ -109,6 +110,7 @@ app.post(
                                                 res.status(201).json({
                                                     id: newId,
                                                 });
+                                                db.close();
                                             });
                                     });
                             });
@@ -159,10 +161,12 @@ app.put(
                                 function (err, result) {
                                     if (err) {
                                         res.sendStatus(404);
+                                        db.close();
                                     } else if (result["created_by"] != userId) {
                                         res.status(401).json({
                                             message: "permission denied.",
                                         });
+                                        db.close();
                                     } else {
                                         result["title"] = titleSent;
                                         result["content"] = contentSent;
@@ -173,6 +177,7 @@ app.put(
                                                 res.sendStatus(204);
                                             }
                                         );
+                                        db.close();
                                     }
                                 }
                             );
@@ -390,6 +395,7 @@ app.use(
                         res.cookie("token", accessToken);
                         res.status(201).json({ token: accessToken });
                     }
+                    db.close();
                 });
             });
         });
