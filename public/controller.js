@@ -3,7 +3,7 @@ let myPosts=[];
 let currentId;
 
 function showInfo() {
-    document.getElementById("posts").style.display = "none";
+    document.getElementById("posts-section").style.display = "none";
     document.getElementById("addButton").style.display = "none";
     document.getElementById("info").style.display = "inline-block";
 }
@@ -165,8 +165,6 @@ function addHomePost(title, content) {
           <div class="card-body">
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${content}</p>
-            <ion-icon name="trash" type="button" data-toggle="modal" data-target="#deletePost"></ion-icon>
-            <ion-icon name="pencil" type="button" data-toggle="modal" data-target="#editPost"></ion-icon>
           </div>
         </div>
     </div>`
