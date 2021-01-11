@@ -269,11 +269,16 @@ function deletePost() {
 }
 
 function deletePostFromScreen() {
+    postsSections = document.getElementById("posts-section");
     posts = document.getElementById("posts-section").childNodes;
     let i = 0;
+    console.log(postsSections);
     for (let p of posts) {
-        if ((i = currentId)) {
-            posts.removeChild(p);
+        id = p.getAttribute("card-id");
+        console.log(p);
+        console.log(id);
+        if (id == currentId) {
+            postsSections.removeChild(posts[i]);
             return;
         }
         i++;
