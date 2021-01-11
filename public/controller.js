@@ -56,6 +56,7 @@ function signin() {
     for (var property in details) {
         formBody.push(encodeURIComponent(property) + "=" + encodeURIComponent(details[property]));
     }
+    console.log(details)
     let http = new XMLHttpRequest();
     let url = 'api/signin';
     let params = formBody.join("&");
@@ -190,13 +191,12 @@ function getHomePosts() {
 
 
 function updateCurrentId(element){
-    console.log(myPosts);
     post = element.parentNode.parentNode.parentNode;
     posts = document.getElementById("postsSection").childNodes;
     let i = 0;
     for (let p of posts){
         if(post==p){
-            currentId = myPosts.find(element => element.id==i).id;
+            currentId = myPosts[i-1].id;
             return;
         }
         i++;
@@ -239,8 +239,8 @@ function editPost() {
 
 function deletePost(){
     let http = new XMLHttpRequest();
-    let url = `/api/admin/post/crud/${currentId - 1}`;
-    http.open('DEL', url, true);
+    let url = `/api/admin/post/crud/${currentId}`;
+    http.open('DELETE', url, true);
     http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     http.send(null);
     http.onreadystatechange = function () {
