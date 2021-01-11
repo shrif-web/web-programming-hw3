@@ -211,8 +211,8 @@ function editPost() {
     let http = new XMLHttpRequest();
     let url = `api/admin/post/crud/${currentId}`;
     let request = {
-        title: document.getElementById("recipient-name").value,
-        content: document.getElementById("message-text").value,
+        title: document.getElementById("recipient-name2").value,
+        content: document.getElementById("message-text2").value,
     };
     let formBody = [];
     for (var property in request) {

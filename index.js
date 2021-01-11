@@ -122,7 +122,7 @@ app.post(
 
 // PUT Update `CT
 app.put(
-    "/api/admin/post/crud/:id/",
+    "/api/admin/post/crud/:id/",    
     authenticateToken,
     body("title").not().isEmpty().withMessage("filed `title` is not valid."),
     body("content")
